@@ -1,2 +1,49 @@
-<h2>E_STRICT Reclassifications</h2>
-<p>All E_STRICT errors have removed or relassified to a different error such as E_NOTICE</p>
+<h2>speaking of errors</h2>
+<p>All E_STRICT errors have removed or reclassified to a different error level such as E_NOTICE</p>
+
+<table class="doctable table">
+    <thead>
+    <tr>
+        <th>Situation</th>
+        <th>New level/behaviour</th>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+    <tr>
+        <td>Indexing by a resource</td>
+        <td><code>E_NOTICE</code></td>
+    </tr>
+    <tr>
+        <td>Abstract static methods</td>
+        <td>Notice removed, triggers no error</td>
+    </tr>
+    <tr>
+        <td>"Redefining" a constructor</td>
+        <td>Notice removed, triggers no error</td>
+    </tr>
+    <tr>
+        <td>Signature mismatch during inheritance</td>
+        <td><code>E_WARNING</code></td>
+    </tr>
+    <tr>
+        <td>Same (compatible) property in two used traits</td>
+        <td>Notice removed, triggers no error</td>
+    </tr>
+    <tr>
+        <td>Accessing static property non-statically</td>
+        <td><code>E_NOTICE</code></td>
+    </tr>
+    <tr>
+        <td>Only variables should be assigned by reference</td>
+        <td><code>E_NOTICE</code></td>
+    </tr>
+    <tr>
+        <td>Only variables should be passed by reference</td>
+        <td><code>E_NOTICE</code></td>
+    </tr>
+    <tr>
+        <td>Calling non-static methods statically</td>
+        <td><code>E_DEPRECATED</code></td>
+    </tr>
+    </tbody>
+</table>

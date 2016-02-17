@@ -1,11 +1,11 @@
 <h2>
-    Scalar Types <br>
-    <small><i>bool, float, int and string</i></small>
+    Scalar Types - Coercive
 </h2>
-<p>
-    There are two modes for scalar type hints.
-</p>
-<ol>
-    <li>Coercive (default) will convert types automatically</li>
-    <li>Strict will throw en error</li>
-</ol>
+<pre><code class="hljs" data-trim contenteditable>
+function sumOfInts(int ...$ints)
+{
+    return array_sum($ints);
+}
+
+var_dump(sumOfInts(2, '3', 4.1)); // outputs 9
+</code></pre>

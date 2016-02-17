@@ -1,0 +1,23 @@
+<h2>Closure Call</h2>
+<p>Temporarily binding an object scope to a closure and invoking it.</p>
+
+<pre><code class="hljs" data-trim contenteditable>
+class Value {
+    protected $value;
+
+    public function __construct($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
+}
+
+$three = new Value(3);
+$four = new Value(4);
+
+$closure = function ($delta) { var_dump($this->getValue() + $delta); };
+$closure->call($three, 4); // $this = $three. outputs 7
+$closure->call($four, 4); // $this = $four. outputs 8
+</code></pre>

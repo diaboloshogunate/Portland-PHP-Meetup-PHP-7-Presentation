@@ -1,11 +1,16 @@
 <h2>
-    Scalar Types - Coercive
+    Scalar Types - Strict
 </h2>
+<p>Strict mode is enabled by adding a declare statement to the top of the file.</p>
+<p>Strict mode is enabled on a per file bases</p>
+
 <pre><code class="hljs" data-trim contenteditable>
+declare(strict_types=1);
+
 function sumOfInts(int ...$ints)
 {
     return array_sum($ints);
 }
 
-var_dump(sumOfInts(2, '3', 4.1)); // outputs 9
+var_dump(sumOfInts(2, '3', 4.1)); // throws a TypeError Exception
 </code></pre>

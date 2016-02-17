@@ -1,11 +1,18 @@
-<h2>Generators - Return</h2>
-<p>You can now use the return statement in a generator. You can get the final value with the getReturn method.</p>
+<h2>Generators - From</h2>
+<p>You can now delegate to other generators.</p>
 <pre><code class="hljs" data-trim contenteditable>
-$gen = function {
-    $foo = yield myAsyncFoo();
-    $bar = yield myAsyncBar($foo);
-    return $bar + 42; // unambiguous execution "result"
-};
-// ... loop over generator
-$gen->getReturn();
+function gen() {
+    yield 1;
+    yield 2;
+    yield from gen2();
+}
+
+function gen2() {
+    yield 3;
+    yield 4;
+}
+
+foreach (gen() as $val) {
+    echo $val; // output 1 2 3 4
+}
 </code></pre>

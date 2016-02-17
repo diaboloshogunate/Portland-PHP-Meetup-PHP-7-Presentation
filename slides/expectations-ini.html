@@ -1,15 +1,9 @@
-<h2>Expectations</h2>
+<h2>Expectations - INI</h2>
 <p>
-    Assert is now a language construct and will not effect performance in production.
+    There are two new INI settings that can be enabled(1) or disabled(0) for assertions.
+    These should be used instead of the assert_options function.
 </p>
-<p>
-    The first parameter can accept any expression that returns a value.
-</p>
-<p>
-    Instead of passing a string as the second argument you can pass an exception that will be thrown.
-</p>
-
-<pre><code class="hljs" data-trim contenteditable>
-class CustomError extends AssertionError {}
-assert(true == false, new CustomError('True is not false!'));
-</code></pre>
+<ul>
+    <li><b>zend.assertions</b> When disabled assertions are ignored. When enabled failed assertions will throw an error.</li>
+    <li><b>assert.exception</b> zend.assertions must also be enabled. Failed assertions will throw an exception instead of an error</li>
+</ul>

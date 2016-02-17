@@ -1,0 +1,15 @@
+<h2>Return Types</h2>
+<p>You specify the type of value that is returned with a colon followed by the returned type</p>
+<pre><code class="hljs" data-trim contenteditable>
+interface A {
+    static function make(): A;
+}
+
+class B implements A {
+    static function make(): A {
+        return new B();
+    }
+}
+</code></pre>
+<p>You can return a child of the expected return type</p>
+<p>You can not return null</p>

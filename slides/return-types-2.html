@@ -1,10 +1,13 @@
 <h2>Return Types</h2>
+<p>Return type signitures are invariant. You can not change the expected return type.</p>
 <pre><code class="hljs" data-trim contenteditable>
-function foo(): array {
-    return [];
+interface A {
+    static function make(): A;
 }
 
-function foo(): array {
-    return null; // not valid
+class B implements A {
+    static function make(): B { // not valid
+        return new B();
+    }
 }
 </code></pre>

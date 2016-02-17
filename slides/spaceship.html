@@ -1,12 +1,23 @@
-<h2>Null Coalescing - ??</h2>
-<p>Syntactic sugar for setting default values.</p>
-<p>Returns false if the value is not set or is null.</p>
+<h2>Spaceship - <=></h2>
+<p>Also known as a Combined Comparison Operator or a Three-way comparison</p>
+<p>used to identify which side var is lower.</p>
 
 <pre><code class="hljs" data-trim contenteditable>
-// The old way
-$username = isset($_GET['user']) ?: 'nobody'; // triggers a E_NOTICE
-$username = isset($_GET['user']) ? $_GET['user'] : 'nobody'; // to avoid the E_NOTICE
+// Integers
+echo 1 <=> 1; // 0
+echo 1 <=> 2; // -1
+echo 2 <=> 1; // 1
 
-// With the ?? operator
-$username = $_GET['user'] ?? 'nobody';
+// Strings
+echo "a" <=> "a"; // 0
+echo "a" <=> "b"; // -1
+echo "b" <=> "a"; // 1
+echo "a" <=> "aa"; // -1
+echo "zz" <=> "aa"; // 1
+
+// Arrays
+echo [1, 2, 3] <=> [1, 2, 3]; // 0
+echo [1, 2, 3] <=> []; // 1
+echo [1, 2, 3] <=> [1, 2, 1]; // 1
+echo [1, 2, 3] <=> [1, 2, 4]; // -1
 </code></pre>

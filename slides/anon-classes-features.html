@@ -1,10 +1,19 @@
 <h2>Anonymous Classes</h2>
+<p>Anonymous classes can extend other classes, implement interfaces or use traits just like normal classes.</p>
 
 <pre><code class="hljs" data-trim contenteditable>
-$util->setLogger(new class {
-    public function log($msg)
+class SomeClass {}
+interface SomeInterface {}
+trait SomeTrait {}
+
+var_dump(new class(10) extends SomeClass implements SomeInterface {
+    private $num;
+
+    public function __construct($num)
     {
-        echo $msg;
+        $this->num = $num;
     }
+
+    use SomeTrait;
 });
 </code></pre>

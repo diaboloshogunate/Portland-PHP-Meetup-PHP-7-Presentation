@@ -1,0 +1,8 @@
+<h2>Cryptographically secure pseudo-random number generator (CSPRNG)</h2>
+<p>Two new cross platform cryptography functions have been added.</p>
+<pre><code class="hljs" data-trim contenteditable>
+$bytes = random_bytes(5);
+echo bin2hex($bytes); // outputs something similar to 385e33f741
+
+random_int(100, 999); // returns a number between 100 - 999
+</code></pre>

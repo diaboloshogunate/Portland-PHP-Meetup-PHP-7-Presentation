@@ -1,10 +1,7 @@
-<h2>Anonymous Classes</h2>
+<h2>Unicode Escaping</h2>
 
 <pre><code class="hljs" data-trim contenteditable>
-$util->setLogger(new class {
-    public function log($msg)
-    {
-        echo $msg;
-    }
-});
+echo "\u{1F602}"; // outputs 😂
+echo "ma\u{00F1}ana"; // pre-composed character
+echo "man\u{0303}ana"; // "n" with combining ~ character (U+0303)
 </code></pre>

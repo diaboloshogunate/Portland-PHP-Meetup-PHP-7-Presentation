@@ -1,0 +1,11 @@
+<h2>Intl Char</h2>
+<p>
+    If you have the intl extension installed you can access the new
+    <a href="http://php.net/manual/en/class.intlchar.php">IntlChar class</a>
+    which expose additional <a href="http://site.icu-project.org/">ICU</a> functionality.
+</p>
+<pre><code class="hljs" data-trim contenteditable>
+printf('%x', IntlChar::CODEPOINT_MAX);
+echo IntlChar::charName('@');
+var_dump(IntlChar::ispunct('!'));
+</code></pre>

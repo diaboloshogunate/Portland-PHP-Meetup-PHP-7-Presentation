@@ -1,10 +1,10 @@
-<h2>Return Types</h2>
+<h2>Define Array Constants with Define</h2>
 <pre><code class="hljs" data-trim contenteditable>
-function foo(): array {
-    return [];
-}
+define('ANIMALS', [
+    'dog',
+    'cat',
+    'bird'
+]);
 
-function foo(): array {
-    return null; // not valid
-}
+echo ANIMALS[1]; // outputs "cat"
 </code></pre>

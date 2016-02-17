@@ -1,11 +1,10 @@
-<h2>Intl Char</h2>
-<p>
-    If you have the intl extension installed you can access the new
-    <a href="http://php.net/manual/en/class.intlchar.php">IntlChar class</a>
-    which expose additional <a href="http://site.icu-project.org/">ICU</a> functionality.
-</p>
+<h2>Group Use Declarations</h2>
 <pre><code class="hljs" data-trim contenteditable>
-printf('%x', IntlChar::CODEPOINT_MAX);
-echo IntlChar::charName('@');
-var_dump(IntlChar::ispunct('!'));
+// PHP 5
+use some\namespace\ClassA;
+use some\namespace\ClassB;
+use some\namespace\ClassC as C;
+
+// PHP 7
+use some\namespace\{ClassA, ClassB, ClassC as C};
 </code></pre>
