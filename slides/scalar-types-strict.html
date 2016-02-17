@@ -1,0 +1,11 @@
+<h2>
+    Scalar Types - Coercive
+</h2>
+<pre><code class="hljs" data-trim contenteditable>
+function sumOfInts(int ...$ints)
+{
+    return array_sum($ints);
+}
+
+var_dump(sumOfInts(2, '3', 4.1)); // outputs 9
+</code></pre>

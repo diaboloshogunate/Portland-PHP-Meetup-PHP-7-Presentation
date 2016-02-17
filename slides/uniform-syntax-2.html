@@ -1,0 +1,32 @@
+<h2>Uniform Variable Syntax</h2>
+<p>Support has been added for variables that couldn't resolve before such as <code>$foo::$bar::$baz</code></p>
+<pre><code class="hljs" data-trim contenteditable>
+[$obj1, $obj2][0]->prop
+getStr(){0}
+
+// support nested ::
+$foo['bar']::$baz
+$foo::$bar::$baz
+$foo->bar()::baz()
+
+// support nested ()
+foo()()
+$foo->bar()()
+Foo::bar()()
+$foo()()
+
+// support operations on arbitrary (...) expressions
+(function() { ... })()
+($obj->closure)()
+(function() { ... })['foo']
+(function() { ... })->foo
+(function() { ... })->foo()
+(function() { ... })::$foo
+(function() { ... })::foo()
+(function() { ... })()
+
+// support all operations on dereferencable scalars (not very useful)
+"string"->toLower()
+[$obj, 'method']()
+'Foo'::$bar
+</code></pre>

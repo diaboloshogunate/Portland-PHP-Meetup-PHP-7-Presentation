@@ -1,0 +1,11 @@
+<h2>Generators - Return</h2>
+<p>You can now use the return statement in a generator. You can get the final value with the getReturn method.</p>
+<pre><code class="hljs" data-trim contenteditable>
+$gen = function {
+    $foo = yield myAsyncFoo();
+    $bar = yield myAsyncBar($foo);
+    return $bar + 42; // unambiguous execution "result"
+};
+// ... loop over generator
+$gen->getReturn();
+</code></pre>

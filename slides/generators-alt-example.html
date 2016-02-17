@@ -1,0 +1,23 @@
+<h2>Generators - Basic Example</h2>
+<pre><code class="hljs" data-trim contenteditable>
+function gen_one_to_three() {
+    for ($i = 1; $i <= 3; $i++) {
+        yield $i; // Note that $i is preserved between yields.
+    }
+}
+
+$generator = gen_one_to_three();
+foreach ($generator as $value) {
+    echo "$value "; // outputs 1 2 3
+}
+
+function alt_gen_one_to_three() {
+    yield 1;
+    $foo = yield 2; // in PHP 5 you had to us $foo = (yield 2)
+    yield ++$foo;
+}
+
+foreach (alt_gen_one_to_three() as $value) {
+    echo "$value "; // outputs 1 2 3
+}
+</code></pre>

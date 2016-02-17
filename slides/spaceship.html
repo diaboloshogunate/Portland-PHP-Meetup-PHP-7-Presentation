@@ -1,0 +1,12 @@
+<h2>Null Coalescing - ??</h2>
+<p>Syntactic sugar for setting default values.</p>
+<p>Returns false if the value is not set or is null.</p>
+
+<pre><code class="hljs" data-trim contenteditable>
+// The old way
+$username = isset($_GET['user']) ?: 'nobody'; // triggers a E_NOTICE
+$username = isset($_GET['user']) ? $_GET['user'] : 'nobody'; // to avoid the E_NOTICE
+
+// With the ?? operator
+$username = $_GET['user'] ?? 'nobody';
+</code></pre>

@@ -1,0 +1,15 @@
+<h2>Expectations</h2>
+<p>
+    Assert is now a language construct and will not effect performance in production.
+</p>
+<p>
+    The first parameter can accept any expression that returns a value.
+</p>
+<p>
+    Instead of passing a string as the second argument you can pass an exception that will be thrown.
+</p>
+
+<pre><code class="hljs" data-trim contenteditable>
+class CustomError extends AssertionError {}
+assert(true == false, new CustomError('True is not false!'));
+</code></pre>
